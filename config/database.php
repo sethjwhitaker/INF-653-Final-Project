@@ -14,7 +14,7 @@ class Database {
                 $database = ltrim($dbparts['path'],'/');
                 return new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
             } else {
-                $dsn = "mysql:host=localhost;dbname=quotes_final_project";
+                $dsn = "mysql:host=localhost;dbname=quotesdb";
                 $username = "root";
                 return new PDO($dsn, $username);
             }
