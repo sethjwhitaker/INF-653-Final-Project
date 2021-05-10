@@ -22,6 +22,9 @@ switch ($action) {
         $authors = $authordb->read();
         $categorydb = new Category($db);
         $categories = $categorydb->read();
+        if(empty($limit)) {
+            $limit = 100;
+        }
         $quotedb = new Quote($db, null, null, $categoryId, $authorId, $limit);
         $quotes = $quotedb->read();
         require("./view/home.php");
